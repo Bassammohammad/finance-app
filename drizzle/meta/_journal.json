@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1735902680611,
+      "tag": "0000_curious_sumo",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1736543261676,
+      "tag": "0001_wealthy_lyja",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1736543800790,
+      "tag": "0002_warm_wallop",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1736598888618,
+      "tag": "0003_adorable_wendell_vaughn",
+      "breakpoints": true
+    }
+  ]
+}
