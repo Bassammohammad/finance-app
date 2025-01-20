@@ -9,7 +9,7 @@ import { ChevronDown } from 'lucide-react';
 import qs from 'query-string';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
-import { cn, formatDataRange } from '@/lib/utils';
+import { formatDataRange } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -19,7 +19,6 @@ import {
   PopoverTrigger,
   PopoverClose,
 } from '@/components/ui/popover';
-import { useGetSummary } from '@/features/summary/use-get-summary';
 
 export const DateFilter = () => {
   const router = useRouter();

@@ -12,7 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from '@/components/ui/popover';
-import { useState } from 'react';
 
 type Props = {
   value?: Date;

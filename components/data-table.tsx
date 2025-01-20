@@ -28,7 +28,6 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Trash } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 interface DataTableProps<TData, TValue> {
