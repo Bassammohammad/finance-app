@@ -57,11 +57,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
     const mappedData = {
       headers: headers.map((_header, index) => {
         const columnIndex = getColumnIndex(`column_${index}`);
-        console.log('columnIndex: ', columnIndex);
-        console.log(
-          'selectedColumns: ',
-          selectedColumns[`column_${columnIndex}`]
-        );
+
         return selectedColumns[`column_${columnIndex}`] || null;
       }),
 

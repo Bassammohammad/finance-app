@@ -26,7 +26,6 @@ enum VARIANTS {
   LIST = 'LIST',
   IMPORT = 'IMPORT',
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const INITIAL_IMPORT_RESULT = {
   data: [],
   errors: [],

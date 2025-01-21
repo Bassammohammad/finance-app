@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { DataTable } from '@/components/data-table';
 import { Skeleton } from '@/components/ui/skeleton';
-
 import { Plus, Loader2 } from 'lucide-react';
 
 import { columns } from '@/app/(dashboard)/accounts/columns';

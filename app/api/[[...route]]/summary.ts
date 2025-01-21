@@ -42,7 +42,6 @@ const app = new Hono().get(
     const periodLength = differenceInDays(endDate, startDate) + 1;
     const lastPeriodStart = subDays(startDate, periodLength);
     const lastPeriodEnd = subDays(endDate, periodLength);
-    console.log('startDate', startDate);
 
     const fetchFinancialData = async (
       userId: string,
@@ -117,7 +116,6 @@ const app = new Hono().get(
       .groupBy(categories.name)
       .orderBy(sql`SUM(ABS(${transactions.amount})) DESC`);
 
-    console.log(category.length);
     const topCategories = category.slice(0, 3);
     const otherCategories = category.slice(3);
     const otherSum = otherCategories.reduce((acc, cur) => acc + cur.value, 0);

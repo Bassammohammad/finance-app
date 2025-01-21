@@ -232,8 +232,6 @@ const app = new Hono()
       const auth = getAuth(c);
       const { id } = c.req.valid('param');
       const values = c.req.valid('json');
-      console.log('param: ', c.req.valid('param'));
-      console.log('json: ', c.req.valid('json'));
 
       if (!id) {
         return c.json(

@@ -5,6 +5,9 @@ import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import { QueryProvider } from '@/ providers/quary-provider';
 import { SheetProvider } from '@/ providers/sheet-provider';
+import { Suspense } from 'react';
+import { Loader2 } from 'lucide-react';
+import { SuspenseWrapper } from '@/components/suspense-wrapper';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -30,14 +33,16 @@ export default function RootLayout({
   return (
     <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <QueryProvider>
-            <SheetProvider />
-            <Toaster />
-            {children}
-          </QueryProvider>
+        <body className={`${geistSans.variable} ${geistMono.variable} `}>
+          <SuspenseWrapper
+            fallback={<Loader2 className="text-neutral-400 animate-spin" />}
+          >
+            <QueryProvider>
+              <SheetProvider />
+              <Toaster />
+              {children}
+            </QueryProvider>
+          </SuspenseWrapper>
         </body>
       </html>
     </ClerkProvider>

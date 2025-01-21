@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { AccountColumn } from '@/app/(dashboard)/transactions/account-column';
 import { CategoryColumn } from '@/app/(dashboard)/transactions/category-column';
 import { ActionsTransaction } from '@/features/transactions/components/actions-transaction';
+import { NotesColumn } from '@/app/(dashboard)/transactions/notes-column';
 
 export type ResponseType = InferResponseType<
   typeof client.api.transactions.$get,
@@ -159,6 +160,9 @@ export const columns: ColumnDef<ResponseType>[] = [
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
+    },
+    cell: ({ row }) => {
+      return <NotesColumn notes={row.original.notes || ''} />;
     },
   },
 

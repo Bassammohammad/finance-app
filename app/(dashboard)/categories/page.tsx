@@ -12,7 +12,7 @@ import { useGetCategories } from '@/features/categories/api/use-get-categories';
 import { useBulkDeleteCategory } from '@/features/categories/api/use-bulk-delete-categories';
 import { useNewCategory } from '@/features/categories/hooks/use-new-category';
 
-export default function AccountsPage() {
+export default function CategoriesPage() {
   const accountQuery = useGetCategories();
   const accounts = accountQuery.data || [];
   const deleteAccounts = useBulkDeleteCategory();

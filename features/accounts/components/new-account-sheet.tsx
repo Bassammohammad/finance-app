@@ -29,7 +29,7 @@ export const NewAccountSheet = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent className=" bg-white space-y-4 ">
+      <SheetContent className="  space-y-4 ">
         <SheetHeader>
           <SheetTitle>New Account</SheetTitle>
           <SheetDescription>

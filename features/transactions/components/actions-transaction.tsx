@@ -38,7 +38,7 @@ export const ActionsTransaction = ({ id }: Props) => {
             <MoreHorizontal />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="bg-white">
+        <DropdownMenuContent align="end">
           <DropdownMenuItem disabled={disabled} onClick={() => onOpen(id)}>
             <Edit className=" size-4 mr-2" />
             Edit

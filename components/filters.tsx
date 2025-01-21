@@ -1,3 +1,5 @@
+'use client';
+
 import { AccountFilter } from '@/components/accounts-filter';
 import { DateFilter } from '@/components/date-filter';
 

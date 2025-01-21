@@ -26,10 +26,6 @@ const navLink = [
     href: '/categories',
     label: 'Categories',
   },
-  {
-    href: '/setting',
-    label: 'Setting',
-  },
 ];
 
 export const Navigation = () => {

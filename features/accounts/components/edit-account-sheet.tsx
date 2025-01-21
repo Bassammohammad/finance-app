@@ -56,7 +56,7 @@ export const EditAccountSheet = () => {
     <>
       <ConfirmDialog />
       <Sheet open={isOpen} onOpenChange={onClose}>
-        <SheetContent className=" bg-white space-y-4 ">
+        <SheetContent className="  space-y-4 ">
           <SheetHeader>
             <SheetTitle>Update Account</SheetTitle>
             <SheetDescription>Update your account name</SheetDescription>

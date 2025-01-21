@@ -67,7 +67,6 @@ export const TransactionForm = ({
       ...values,
       amount: amountMiliunits,
     });
-    console.log(values.date);
   };
 
   return (

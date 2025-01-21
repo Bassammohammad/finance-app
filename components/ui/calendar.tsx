@@ -44,18 +44,19 @@ function Calendar({
         ),
         day: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-8 w-8 p-0 font-normal aria-selected:opacity-100'
+          'h-8 w-8 p-0 font-normal aria-selected:opacity-100 hover:bg-neutral-200 hover:text-neutral-600'
         ),
-        day_range_start: 'day-range-start',
-        day_range_end: 'day-range-end',
-        day_selected:
-          'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-        day_today: 'bg-accent text-accent-foreground',
+        day_range_start:
+          'day-range-start bg-neutral-900 text-neutral-100  rounded-l-lg',
+        day_range_end:
+          'day-range-end bg-neutral-900 text-neutral-100 rounded-r-lg ',
+        day_selected: `bg-neutral-900 text-neutral-100 ${props.mode === 'range' ? 'rounded-none' : ''}   hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground`,
+        day_today: ``,
         day_outside:
           'day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground',
         day_disabled: 'text-muted-foreground opacity-50',
         day_range_middle:
-          'aria-selected:bg-accent aria-selected:text-accent-foreground',
+          'aria-selected:bg-neutral-200 aria-selected:rounded-none  aria-selected:text-neutral-600',
         day_hidden: 'invisible',
         ...classNames,
       }}

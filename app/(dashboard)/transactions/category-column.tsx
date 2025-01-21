@@ -14,7 +14,6 @@ export const CategoryColumn = ({ category, categoryId, id }: Props) => {
   const { onOpen: onOpenCategory } = useOpenCategory();
   const { onOpen: onOpenTransaction } = useOpenTransaction();
   const onClick = () => {
-    console.log('categoryId: ', categoryId);
     if (categoryId) {
       onOpenCategory(categoryId);
     } else {
