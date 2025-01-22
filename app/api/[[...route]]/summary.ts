@@ -120,13 +120,18 @@ const app = new Hono().get(
     const otherCategories = category.slice(3);
     const otherSum = otherCategories.reduce((acc, cur) => acc + cur.value, 0);
 
-    const finalCategories = topCategories;
-    if (otherCategories.length > 0) {
-      finalCategories.push({
-        name: ' other',
-        value: otherSum,
-      });
-    }
+    // const finalCategories = topCategories;
+
+    const finalCategories = [
+      ...topCategories,
+      { name: 'other', value: otherSum },
+    ];
+    // if (otherCategories.length >= 0) {
+    //   finalCategories.push({
+    //     name: ' other',
+    //     value: otherSum,
+    //   });
+    // }
 
     const activeDays = await db
       .select({
