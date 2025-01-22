@@ -76,14 +76,14 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <ConfirmDialog />
-      <div className="flex items-center py-4 justify-between">
+      <div className="flex flex-col lg:flex-row items-center py-4 justify-between  gap-x-2 gap-y-2">
         <Input
           placeholder={`Filter ${filterKey}...`}
           value={(table.getColumn(filterKey)?.getFilterValue() as string) ?? ''}
           onChange={(event) => {
             table.getColumn(filterKey)?.setFilterValue(event.target.value);
           }}
-          className="max-w-sm"
+          className="w-full lg:max-w-sm "
         />
         {table.getFilteredSelectedRowModel().rows.length > 0 && (
           <Button
@@ -95,6 +95,7 @@ export function DataTable<TData, TValue>({
                 table.resetRowSelection();
               }
             }}
+            className="w-full  lg:w-auto"
           >
             <Trash />
             Delete ({table.getFilteredSelectedRowModel().rows.length})
