@@ -9,7 +9,6 @@ export const runtime = 'edge';
 
 const app = new Hono().basePath('/api');
 
-// Middleware to handle CORS
 app.use('*', async (c, next) => {
   c.res.headers.set('Access-Control-Allow-Origin', '*');
   c.res.headers.set(
@@ -22,7 +21,6 @@ app.use('*', async (c, next) => {
   );
   await next();
 
-  // Handle preflight requests (OPTIONS)
   if (c.req.method === 'OPTIONS') {
     c.status(204); // No content
   }
