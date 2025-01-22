@@ -35,7 +35,7 @@ export default function AccountsPage() {
   }
 
   return (
-    <div className="mx-2 md:mx-20 lg:mx-20">
+    <div className="mx-2 md:mx-18 lg:mx-20">
       <div className="  max-w-screen-2xl mx-auto -mt-24 w-full pb-10  ">
         <Card className="border-none drop-shadow-sm">
           <CardHeader className="gap-y-2 lg:flex-row lg:justify-between lg:items-center  ">
