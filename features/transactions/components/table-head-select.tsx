@@ -21,6 +21,7 @@ export const TableHeadSelect = ({
   onChange,
 }: Props) => {
   const currentSelection = selectedColumns[`column_${columnIndex}`];
+  console.log('currentSelection', currentSelection);
   return (
     <Select
       value={currentSelection || ''}
@@ -32,7 +33,7 @@ export const TableHeadSelect = ({
           currentSelection && 'text-blue-500'
         )}
       >
-        <SelectValue placeholder="Skip" />
+        <SelectValue placeholder="Skip" className="text-neutral-500" />
       </SelectTrigger>
       <SelectContent className="bg-white">
         <SelectItem className="bg-white" value="skip">

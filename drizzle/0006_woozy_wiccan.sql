@@ -1,0 +1,1 @@
+ALTER TABLE "plaidTransactions" RENAME TO "plaid";

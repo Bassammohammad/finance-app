@@ -28,6 +28,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
   const [selectedColumns, setSelectedColumns] = useState<SelectedColumnState>(
     {}
   );
+  console.log('selectedColumns: ', selectedColumns);
 
   const onTableHeadSelectChange = (
     columnIndex: number,
