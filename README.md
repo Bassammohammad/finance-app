@@ -1,4 +1,7 @@
 Personal Finance Manager
+
+![image de dashboard](public/img.png)
+
 Description:
 Personal Finance Manager est une application web conçue pour aider les utilisateurs à gérer leurs finances personnelles de manière efficace. L'application permet d'enregistrer vos revenus, vos dépenses, et de les catégoriser par compte. Elle offre également des graphiques pour analyser vos finances et permet l'importation de transactions via des fichiers CSV.
 
