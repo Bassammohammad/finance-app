@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Personal Finance Manager
 
-## Getting Started
+![image de dashboard](public/img.png)
 
-First, run the development server:
+Description:
+Personal Finance Manager est une application web conçue pour aider les utilisateurs à gérer leurs finances personnelles de manière efficace. L'application permet d'enregistrer vos revenus, vos dépenses, et de les catégoriser par compte. Elle offre également des graphiques pour analyser vos finances et permet l'importation de transactions via des fichiers CSV.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fonctionnalités
+Gestion des transactions :
+ - Ajouter et suivre vos revenus et dépenses.
+ - Catégoriser les transactions (par exemple : nourriture, transport, etc.).
+ - Gérer plusieurs comptes financiers.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Analyse des finances :
+ - Visualisation des données via des graphiques interactifs (Recharts).
+ - Analyse des tendances financières.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Importation des données :
+ - Importer des transactions directement via des fichiers CSV.
+ 
+Sécurisation et authentification :
+ - Authentification utilisateur robuste via Clerk.
 
-## Learn More
+Déploiement rapide et accessible :
+ - Déployé sur Vercel pour une accessibilité optimale.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Technologies et outils utilisés
+Frontend :
+ - React.js : Bibliothèque pour la construction de l'interface utilisateur.
+ - Next.js (app router) : Framework React pour le rendu côté serveur (SSR) et côté client.
+ - TailwindCSS : Framework CSS pour un style rapide et réactif.
+ - Recharts : Bibliothèque pour créer des graphiques interactifs.
+ - React Query : Gestion des appels API et des états côté client.
 
-## Deploy on Vercel
+Backend :
+ - Hono : Framework rapide basé sur Node.js pour construire des API.
+ - Node.js : Runtime JavaScript utilisé pour le backend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Base de données :
+ - PostgreSQL : Base de données relationnelle pour stocker les données utilisateur.
+ - Drizzle ORM : ORM léger et efficace pour interagir avec PostgreSQL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Authentification :
+ - Clerk : Solution d'authentification pour la gestion des utilisateurs.
+
+Déploiement :
+ - Vercel : Plateforme de déploiement pour héberger l'application.
+
+
+
+
+# Installation et exécution
+
+1. Clonez le repository :
+   git clone https://github.com/your-username/finance-app.git
+   cd finance-app
+
+2. Installez les dépendances :
+   npm install
+
+3. Configurez les variables d'environnement :
+   Créez un fichier `.env` à la racine avec vos clés Clerk et la configuration PostgreSQL.
+   Exemple :
+
+4. Démarrer l'application : 
+   npm run dev
+   
+
+
+Améliorations futures
+ - Intégration avec des comptes bancaires pour synchroniser automatiquement les transactions.
+ - Ajout d'un tableau de bord pour les prévisions financières basées sur les tendances.
+ - Exportation des données financières dans des formats comme PDF ou Excel.
+ - Gestion multi-langue pour une meilleure accessibilité.
+
+
+
+Contribuer
+Si vous souhaitez contribuer au projet, voici les étapes à suivre :
+
+Fork le repository.
+Créez une branche pour votre fonctionnalité (git checkout -b feature/ma-fonctionnalité).
+Commitez vos modifications (git commit -m 'Ajout d'une nouvelle fonctionnalité').
+Poussez la branche (git push origin feature/ma-fonctionnalité).
+Ouvrez une Pull Request.
