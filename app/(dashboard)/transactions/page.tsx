@@ -1,7 +1,8 @@
 'use client';
 import { Plus, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import { transactions as transactionSchema } from '@/db/schema';
 
@@ -46,15 +47,20 @@ export default function TransactionsPage() {
     setImportResults(INITIAL_IMPORT_RESULT);
   };
 
-  const transactionsQuery = useGetTransactions();
-  const transactions = transactionsQuery.data || [];
+  const { isLoading, data } = useGetTransactions();
+  const totalTransactions = data?.totalRecords || 0;
+  const perPage = data?.perPage || 1;
+
+  const transactions = data?.data || [];
   const createTransactions = useBulkCreateTransactions();
   const deleteTransactions = useBulkDeleteTransactions();
   const newTransaction = useNewTransaction();
 
-  const isDisabled =
-    transactionsQuery.isLoading || deleteTransactions.isPending;
+  const isDisabled = isLoading || deleteTransactions.isPending;
 
+  useEffect(() => {
+    console.log(data?.totalRecords);
+  });
   const onSubmitImport = async (
     values: (typeof transactionSchema.$inferInsert)[]
   ) => {
@@ -73,7 +79,7 @@ export default function TransactionsPage() {
     });
   };
 
-  if (transactionsQuery.isLoading) {
+  if (isLoading) {
     return (
       <div className="  max-w-screen-2xl mx-auto -mt-24 w-full pb-10  ">
         <Card className="border-none drop-shadow-sm">
@@ -122,13 +128,17 @@ export default function TransactionsPage() {
             </div>
           </CardHeader>
           <CardContent>
+            youhou
             <DataTable
               data={transactions}
               columns={columns}
+              perPage={perPage}
+              totalRecords={totalTransactions}
+              totalPages={Math.ceil(totalTransactions / perPage)}
               filterKey="date"
               disabled={isDisabled}
-              onDelete={(row) => {
-                const ids = row.map((r) => r.original.id);
+              onDelete={(rows) => {
+                const ids = rows.map((r) => r.original.id);
                 deleteTransactions.mutate({ ids });
               }}
             />

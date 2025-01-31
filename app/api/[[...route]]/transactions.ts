@@ -23,11 +23,12 @@ const app = new Hono()
         from: z.string().optional(),
         to: z.string().optional(),
         accountId: z.string().optional(),
+        page: z.string().optional(),
       })
     ),
     async (c) => {
       const auth = getAuth(c);
-      const { from, to, accountId } = c.req.valid('query');
+      const { from, to, accountId, page } = c.req.valid('query');
       if (!auth?.userId) {
         return c.json(
           {
@@ -43,6 +44,10 @@ const app = new Hono()
         ? parse(from, 'yyyy-MM-dd', new Date())
         : defaultFrom;
       const endDate = to ? parse(to, 'yyyy-MM-dd', new Date()) : defaultTo;
+
+      const pageNumber = page ? parseInt(page, 10) : 1;
+      const limitNumber = 10;
+      const offset = (pageNumber - 1) * limitNumber;
 
       const data = await db
         .select({
@@ -66,9 +71,29 @@ const app = new Hono()
             gte(transactions.date, startDate),
             lte(transactions.date, endDate)
           )
+        )
+        .limit(limitNumber)
+        .offset(offset);
+
+      const totalRecords = await db
+        .select({ count: sql<number>`COUNT(*)`.mapWith(Number).as('count') })
+        .from(transactions)
+        .innerJoin(accounts, eq(accounts.id, transactions.accountId))
+        .leftJoin(categories, eq(categories.id, transactions.categoryId))
+        .where(
+          and(
+            accountId ? eq(transactions.accountId, accountId) : undefined,
+            eq(accounts.userId, auth.userId),
+            gte(transactions.date, startDate),
+            lte(transactions.date, endDate)
+          )
         );
 
-      return c.json({ data });
+      return c.json({
+        data: data,
+        totalRecords: totalRecords[0].count,
+        perPage: limitNumber,
+      });
     }
   )
   .get(
