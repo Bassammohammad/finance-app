@@ -1,4 +1,4 @@
-Personal Finance Manager
+Finance App
 
 ![image de dashboard](public/img.png)
 
