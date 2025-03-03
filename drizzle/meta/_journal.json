@@ -50,6 +50,27 @@
       "when": 1737900626059,
       "tag": "0006_woozy_wiccan",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1738354809079,
+      "tag": "0007_mighty_silver_sable",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1738355090292,
+      "tag": "0008_steady_sprite",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1738356106986,
+      "tag": "0009_slippery_hellcat",
+      "breakpoints": true
     }
   ]
 }

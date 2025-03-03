@@ -5,7 +5,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import { QueryProvider } from '@/ providers/quary-provider';
 import { SheetProvider } from '@/ providers/sheet-provider';
-import { Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
 import { SuspenseWrapper } from '@/components/suspense-wrapper';
 

@@ -53,7 +53,7 @@ interface DataCardProps extends BoxVariants, IconsVariants {
   percentageChange?: number;
 }
 
-export const DataCard = ({
+export const  DataCard = ({
   icon: Icon,
   title,
   dateRange,

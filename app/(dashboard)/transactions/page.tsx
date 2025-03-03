@@ -2,7 +2,6 @@
 import { Plus, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 import { transactions as transactionSchema } from '@/db/schema';
 
@@ -22,6 +21,7 @@ import { useBulkCreateTransactions } from '@/features/transactions/api/use-bulk-
 import { useNewTransaction } from '@/features/transactions/hooks/use-new-transaction';
 import { useGetTransactions } from '@/features/transactions/api/use-get-transactions';
 import { useSelectAccount } from '@/features/accounts/components/use-select-account';
+import { ExportButton } from '@/components/export-button';
 
 enum VARIANTS {
   LIST = 'LIST',
@@ -125,10 +125,10 @@ export default function TransactionsPage() {
                 add transaction
               </Button>
               <UploadButton onUpload={onUpload} />
+              <ExportButton data={transactions} />
             </div>
           </CardHeader>
           <CardContent>
-            youhou
             <DataTable
               data={transactions}
               columns={columns}
